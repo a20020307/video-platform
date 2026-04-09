@@ -72,7 +72,7 @@ npm run dev
 
 ```bash
 # 1. SSH 登录 ECS
-ssh root@42.121.167.205
+ssh root@xxx.xxx.xxx.xxx
 
 # 2. 安装 Docker
 curl -fsSL https://get.docker.com | sh
@@ -240,8 +240,3 @@ oss2 是同步库，通过 `asyncio.get_event_loop().run_in_executor(dedicated_t
 
 ## 已知限制
 
-1. 无视频转码/缩略图生成（状态停留在 `processing`，需对接 FFmpeg 队列）
-2. 无邮件重置密码（AU-05 建议项，需配置 SMTP）
-3. 无 Redis：token 黑名单（登出撤销）和 session 存储尚未加 Redis
-4. 无 HTTPS：生产环境应在 Nginx 前加 SSL 终止（Let's Encrypt 或 ACM）
-5. OSS bucket 访问策略需手动在阿里云控制台设置为私有读（禁止公读，通过预签名 URL 访问）
